@@ -44,7 +44,7 @@ function calculateTotal(){
     productTotal.forEach(i => {subTotalPrice += +i.innerHTML;});
     subTotal.innerHTML  = subTotalPrice.toFixed(2);
     tax.innerHTML       = (+subTotal.innerHTML * 0.18).toFixed(2);
-    shipping.innerHTML  = 15.00.toFixed(2);
+    shipping.innerHTML  = subTotalPrice == 0 ? (0).toFixed(2) : 15.00.toFixed(2);
     Total.innerHTML     = (+subTotal.innerHTML + +tax.innerHTML + +shipping.innerHTML).toFixed(2);
 
     // Each Product Total Price calculation
